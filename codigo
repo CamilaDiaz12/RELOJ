@@ -1,0 +1,33 @@
+position_h   = 0
+
+def setup():
+    size(500, 200)
+
+def draw():
+    global position_h 
+
+    background(255)
+
+    ellipse (position_h ,50,50,50)
+    fill (map(hour(),0,59,0,0))
+
+    if position_h  >  width:
+        position_h  = 0
+    else:
+        position_h = map(minute(),0,59,100,width)
+        
+    ellipse (position_h ,100,50,50)
+    fill (map(hour(),0,59,0,0))
+          
+    if position_h   > width:
+        position_h  = 0
+    else:
+        position_h = map(hour(),0,23,0,width)
+
+    ellipse (position_h ,150,50,50)
+    fill (map(second(),0,59,0,0))
+        
+    if position_h   > width:
+        position_h  = 0
+    else:
+        position_h  = map(second(),0,59,0,width)
